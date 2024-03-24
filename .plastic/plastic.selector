@@ -1,0 +1,4 @@
+repository "Looney Tunes Game@Valentinabarbetty_squidgames@cloud"
+  path "/"
+    br "/main"
+    co "/main"
