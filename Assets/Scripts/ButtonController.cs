@@ -6,8 +6,9 @@ using TMPro;
 public class ButtonController : MonoBehaviour
 {
     //public Button botonClose;
+    private static ButtonController instance;
     public Button botonStart;
-    public Canvas canvas;
+    public Canvas canvasWelcome;
    // public Canvas canvas;
     //public Image imagen;
 
@@ -31,16 +32,25 @@ public class ButtonController : MonoBehaviour
         //botonClose.gameObject.SetActive(true);
         botonStart.gameObject.SetActive(false);
         //texto.enabled = false;
-        canvas.gameObject.SetActive(false);
+        canvasWelcome.gameObject.SetActive(false);
         //imagen.gameObject.SetActive(false);
+        //canvasWelcome.gameObject.SetActive(false);
+        //CanvasGame.gameObject.SetActive(true);
+        Main.GetInstance().SetIsStarted(true);
+        Main.GetInstance().StartGame();
     }
     public void B_NoShow(){
         Debug.Log("Button Clicked! ");
         //botonClose.gameObject.SetActive(false);
         botonStart.gameObject.SetActive(true);
         //texto.enabled = true;
-        canvas.gameObject.SetActive(true);
+        //canvasWelcome.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(true);
+
+    }
+    public static ButtonController GetInstance()
+    {
+        return instance == null ? instance = new ButtonController() : instance;
     }
 }
 
