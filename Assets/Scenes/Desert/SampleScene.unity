@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 114854935}
   - component: {fileID: 114854937}
   m_Layer: 5
-  m_Name: config_canvas
+  m_Name: ConfigCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1038,6 +1038,8 @@ Transform:
   - {fileID: 110044815}
   - {fileID: 343410790}
   - {fileID: 284902317}
+  - {fileID: 539874252}
+  - {fileID: 841757390}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &220846405
@@ -1480,7 +1482,7 @@ GameObject:
   - component: {fileID: 269811347}
   - component: {fileID: 269811346}
   m_Layer: 5
-  m_Name: text_carrot_canvas
+  m_Name: TextCarrotCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3029,8 +3031,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539874251}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -481.47903, y: 37.51731, z: 51.186417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 216.6124, y: 36.188667, z: 206.90213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3045,7 +3047,7 @@ Transform:
   - {fileID: 988018285}
   - {fileID: 1012231766}
   - {fileID: 869395272}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 217960531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &547156279
 PrefabInstance:
@@ -4166,7 +4168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841757390}
   m_Layer: 0
-  m_Name: trap
+  m_Name: Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4180,13 +4182,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841757389}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -404.5752, y: 70.22915, z: 35.539215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 293.51624, y: 68.900505, z: 191.25493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1205620260}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 217960531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &841871652
 PrefabInstance:
@@ -4262,6 +4264,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 447314, guid: 8b8681c086a094348955216d4ef3cf0f, type: 3}
   m_PrefabInstance: {fileID: 841871652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &843001824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843001825}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843001825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843001824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -348.9267, y: 161.35162, z: 179.5292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1929993466}
+  - {fileID: 1724420727}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &844021337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4348,7 +4383,7 @@ GameObject:
   - component: {fileID: 847445942}
   - component: {fileID: 847445941}
   m_Layer: 5
-  m_Name: carrot_canvas
+  m_Name: CarrotCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4983,7 +5018,7 @@ GameObject:
   - component: {fileID: 947505779}
   - component: {fileID: 947505778}
   m_Layer: 5
-  m_Name: restart_btn
+  m_Name: RestartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5137,7 +5172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 316.7, y: 67.8}
+  m_AnchoredPosition: {x: 310.58, y: 67.8}
   m_SizeDelta: {x: 40, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961232995
@@ -6159,7 +6194,7 @@ Transform:
   m_GameObject: {fileID: 1172856070}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2586.6206, y: -537.0206, z: -362.8327}
+  m_LocalPosition: {x: -2530, y: -537.0206, z: -362.8327}
   m_LocalScale: {x: 2.330097, y: 2.330097, z: 2.330097}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6868,7 +6903,7 @@ GameObject:
   - component: {fileID: 1205840682}
   - component: {fileID: 1205840681}
   m_Layer: 5
-  m_Name: heart_canvas
+  m_Name: HeartCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10278,7 +10313,7 @@ GameObject:
   - component: {fileID: 1711839113}
   - component: {fileID: 1711839112}
   m_Layer: 5
-  m_Name: menu-block
+  m_Name: MenuBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10663,7 +10698,7 @@ RectTransform:
   - {fileID: 847445940}
   - {fileID: 269811345}
   - {fileID: 1172856071}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 843001825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11803,7 +11838,7 @@ RectTransform:
   - {fileID: 947505777}
   - {fileID: 2144608071}
   - {fileID: 1946158579}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 843001825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11989,7 +12024,7 @@ GameObject:
   - component: {fileID: 1946158581}
   - component: {fileID: 1946158580}
   m_Layer: 5
-  m_Name: close-btn
+  m_Name: CloseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13090,7 +13125,7 @@ GameObject:
   - component: {fileID: 2144608073}
   - component: {fileID: 2144608072}
   m_Layer: 5
-  m_Name: config-btn
+  m_Name: ConfigBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13369,10 +13404,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1268099048}
-  - {fileID: 217960531}
-  - {fileID: 1929993466}
-  - {fileID: 539874252}
   - {fileID: 1802828490}
   - {fileID: 330916301}
-  - {fileID: 1724420727}
-  - {fileID: 841757390}
+  - {fileID: 843001825}
+  - {fileID: 217960531}
