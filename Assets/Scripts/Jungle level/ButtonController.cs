@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     private static ButtonController instance;
     public Button botonStart;
     public Canvas canvasWelcome;
+    public Canvas canvasGame;
    // public Canvas canvas;
     //public Image imagen;
 
@@ -37,11 +38,14 @@ public class ButtonController : MonoBehaviour
         botonStart.gameObject.SetActive(false);
         //texto.enabled = false;
         canvasWelcome.gameObject.SetActive(false);
+        canvasGame.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(false);
         //canvasWelcome.gameObject.SetActive(false);
-        //CanvasGame.gameObject.SetActive(true);
-        Main.GetInstance().SetIsStarted(true);
-        Main.GetInstance().StartGame();
+        
+        
+        Game.GetInstance().SetIsStarted(true);
+        Game.GetInstance().StartGame();
+        //Main.GetInstance().StartGame();
     }
     public void B_NoShow(){
         Debug.Log("Button Clicked! ");

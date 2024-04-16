@@ -80,7 +80,7 @@ public class Main : MonoBehaviour
             }
     }
 
-    IEnumerator CountDown()
+    /*IEnumerator CountDown()
     {
         time = 3;
         do
@@ -90,18 +90,20 @@ public class Main : MonoBehaviour
             time--;
         }while(time>0);
         Debug.Log("Start");
-    }
+    }*/
 
     public void SetIsStarted(bool isStarted)
     {
         this.isStarted = isStarted;
     }
 
-    public void StartGame()
+    /*public void StartGame()
     {
+       
         enumerator = CountDown();
         StartCoroutine(enumerator);
-    }
+    }*/
+    
       public static Main GetInstance()
     {
         return instance == null ? instance = new Main() : instance;
