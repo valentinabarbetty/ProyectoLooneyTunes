@@ -2266,6 +2266,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56743317}
     m_Modifications:
+    - target: {fileID: 638947161102684985, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1294f0fd3a4402e4f9be841c3722a5bb, type: 2}
+    - target: {fileID: 638947161102684985, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375820589046204731, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1294f0fd3a4402e4f9be841c3722a5bb, type: 2}
+    - target: {fileID: 3375820589046204731, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6071618120126882783, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
       propertyPath: CanvasGame
       value: 
@@ -2357,6 +2373,14 @@ PrefabInstance:
     - target: {fileID: 8044624754216160155, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273252396947110034, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1294f0fd3a4402e4f9be841c3722a5bb, type: 2}
+    - target: {fileID: 8273252396947110034, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
