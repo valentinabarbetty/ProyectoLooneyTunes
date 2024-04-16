@@ -6,16 +6,18 @@ using TMPro;
 public class Game : MonoBehaviour
 {
     private static Game instance;
-    private float speed = 2f;
+    private float speed = 2.0f;
     private bool isStarted = false;
     public GameObject TextTime;
     public TMP_Text TmpText;
     private IEnumerator enumerator;
     private int time;
+
     void Awake()
     {
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class Game : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && enumerator != null)
+        if (Input.GetKeyDown(KeyCode.Escape) && enumerator != null)
         {
             Debug.Log("Stopping coroutine");
             StopCoroutine(enumerator);
@@ -59,7 +61,7 @@ public class Game : MonoBehaviour
             Debug.Log(time.ToString() + " seconds left.");
             yield return new WaitForSeconds(1f);
             time--;
-        }while(time>0);
+        } while (time > 0);
         Debug.Log("Start");
     }
 
@@ -76,7 +78,6 @@ public class Game : MonoBehaviour
 
     public static Game GetInstance()
     {
-        return instance == null ? instance = new Game() : instance;
+        return instance == null ? instance = FindObjectOfType<Game>() : instance;
     }
 }
-
