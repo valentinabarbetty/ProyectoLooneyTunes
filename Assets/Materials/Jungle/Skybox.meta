@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Snow/Skybox.meta
+guid: 6b93bf7c2b751b34c83c11f7c70e239d
+========
 guid: d24568b1e7c2040519d24b83b0d2d139
+>>>>>>>> 910456eb5e16f68cd21461c1d1725e05d0bc9dd6:Assets/Materials/Jungle/Skybox.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
