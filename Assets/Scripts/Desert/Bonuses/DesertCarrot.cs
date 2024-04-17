@@ -5,8 +5,6 @@ using UnityEngine;
 public class DesertCarrot : MonoBehaviour
 {
     public Transform carrot1;
-    public Transform carrot2;
-    public Transform carrot3;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +21,7 @@ public class DesertCarrot : MonoBehaviour
 
      void MoverZanahorias()
     {
-        Transform[] zanahorias = { carrot1, carrot2, carrot3 };
+        Transform[] zanahorias = { carrot1};
         foreach (Transform zanahoria in zanahorias)
         {
             Vector3 position = zanahoria.position;

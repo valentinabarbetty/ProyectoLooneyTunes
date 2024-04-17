@@ -6,8 +6,8 @@ public class DesertHeart : MonoBehaviour
 {
   public Transform heart;
   public Transform[] hearts; // Arreglo de transformaciones de los corazones
-   public float heartbeatIntensity = 0.1f; // Intensidad del latido
-   public float heartbeatSpeed = 1.0f; // Velocidad del latido
+   public float heartbeatIntensity = 6f; // Intensidad del latido
+   public float heartbeatSpeed = 6f; // Velocidad del latido
     // Start is called before the first frame update
     void Start()
     {
