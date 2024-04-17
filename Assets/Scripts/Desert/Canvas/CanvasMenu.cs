@@ -8,6 +8,8 @@ public class CanvasMenuConfig : MonoBehaviour
     public Canvas CanvasMenu;
     public Canvas CanvasGame;
 
+    public Canvas CanvasPerfil;
+
     void Awake()
     {
         instance = this;
@@ -29,6 +31,12 @@ public class CanvasMenuConfig : MonoBehaviour
         CanvasGame.gameObject.SetActive(true);
         Game.GetInstance().SetIsStarted(true);
         Game.GetInstance().StartGame();
+    }
+
+     public void B_OnHandleButtonPerfil()
+    {
+        CanvasMenu.gameObject.SetActive(false);
+        CanvasPerfil.gameObject.SetActive(true);
     }
 
      public void ExitGame()

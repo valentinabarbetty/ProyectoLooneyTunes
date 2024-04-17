@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4011338266739985878}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5932136356533746381}
+        m_TargetAssemblyTypeName: CanvasMenuConfig, Assembly-CSharp
+        m_MethodName: B_OnHandleButtonPerfil
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1766310230175328300
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +807,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONFIGURACIONES
+  m_text: PERFIL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1294f0fd3a4402e4f9be841c3722a5bb, type: 2}
   m_sharedMaterial: {fileID: -3266535485891611421, guid: 1294f0fd3a4402e4f9be841c3722a5bb, type: 2}
@@ -993,3 +1005,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasMenu: {fileID: 3293340460442702452}
   CanvasGame: {fileID: 0}
+  CanvasPerfil: {fileID: 0}
