@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -18,13 +17,6 @@ public class Game : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (this.isStarted)
@@ -63,6 +55,42 @@ public class Game : MonoBehaviour
             time--;
         } while (time > 0);
         Debug.Log("Start");
+
+        // Start camera movements after countdown
+        //StartCoroutine(MoveCameraHorizontally());
+        StartCoroutine(MoveCameraVertically());
+    }
+
+    IEnumerator MoveCameraHorizontally()
+    {
+        float duration = 6f; // Decreased duration for faster movement
+        float elapsedTime = 0f;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = new Vector3(60f, transform.position.y, 100f); // Adjust X value as needed
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("Horizontal camera movement stopped.");
+    }
+
+    IEnumerator MoveCameraVertically()
+    {
+        float duration = 20f; // Decreased duration for faster movement
+        float elapsedTime = 0f;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = new Vector3(transform.position.x, 30f, 100f); // Adjust Y value as needed
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("Vertical camera movement stopped.");
     }
 
     public void SetIsStarted(bool isStarted)
