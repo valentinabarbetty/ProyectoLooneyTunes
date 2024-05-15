@@ -6911,10 +6911,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 300356265}
   - {fileID: 374404311}
   - {fileID: 1220953567}
   - {fileID: 306624376}
+  - {fileID: 7969270226768081924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &852275658 stripped
@@ -7235,7 +7235,7 @@ PrefabInstance:
     - target: {fileID: 5932136356533746381, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
       propertyPath: CanvasGame
       value: 
-      objectReference: {fileID: 300356267}
+      objectReference: {fileID: 0}
     - target: {fileID: 5932136356533746381, guid: 620cbe93ad7d7e24a9c68a36aff72016, type: 3}
       propertyPath: CanvasPerfil
       value: 
@@ -17001,14 +17001,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 843001825}
     m_Modifications:
+    - target: {fileID: 3762111923247504155, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
+      propertyPath: canvasGame
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4587096760056475588, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
       propertyPath: canvasGame
       value: 
-      objectReference: {fileID: 300356267}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044109510273850047, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
+      propertyPath: canvasGame
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5336531821272776875, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
       propertyPath: canvasGame
       value: 
-      objectReference: {fileID: 300356267}
+      objectReference: {fileID: 0}
     - target: {fileID: 7655893438536744548, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
       propertyPath: m_Name
       value: Canvas_Inicio
