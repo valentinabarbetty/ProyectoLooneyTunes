@@ -3363,6 +3363,10 @@ PrefabInstance:
       propertyPath: canvasGame
       value: 
       objectReference: {fileID: 1127897808}
+    - target: {fileID: 5762508526530207382, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
+      propertyPath: canvasLevel
+      value: 
+      objectReference: {fileID: 2119320249}
     - target: {fileID: 6420812473718448901, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
       propertyPath: canvasGame
       value: 
@@ -3490,6 +3494,10 @@ PrefabInstance:
     - target: {fileID: 7962356976773831473, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
       propertyPath: m_Name
       value: Canvas_Levels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962356976773831473, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8589033858934164371, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
       propertyPath: indiceNivel
@@ -6446,6 +6454,10 @@ PrefabInstance:
       propertyPath: canvasGame
       value: 
       objectReference: {fileID: 1127897808}
+    - target: {fileID: 4587096760056475588, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
+      propertyPath: canvasLevel
+      value: 
+      objectReference: {fileID: 2119320249}
     - target: {fileID: 5336531821272776875, guid: 539f4d696e58cf34794e30990cc5fc36, type: 3}
       propertyPath: canvasGame
       value: 
@@ -6944,6 +6956,11 @@ MonoBehaviour:
 --- !u!224 &2119320248 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6517333442978771239, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
+  m_PrefabInstance: {fileID: 1313290126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &2119320249 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 9124408902337907195, guid: a1be845a9d8734beda12c2d768dc212e, type: 3}
   m_PrefabInstance: {fileID: 1313290126}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2133364903 stripped

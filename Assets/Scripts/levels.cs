@@ -9,11 +9,10 @@ public class Level : MonoBehaviour
     public bool pasarNivel3;
     public bool pasarNivel4;
     public int indiceNivel;
-    private static Level instance;
 
     void Start()
     {
-       instance = this;
+       
     }
 
  void Update()
@@ -31,11 +30,5 @@ public class Level : MonoBehaviour
     }
 public void cambiarNivel(int indice){
         SceneManager.LoadScene(indice);
-        Game.GetInstance().SetIsStarted(true);
-        Game.GetInstance().StartGame();
-    }
-        public static Level GetInstance()
-    {
-        return instance == null ? instance = new Level() : instance;
     }
 }
