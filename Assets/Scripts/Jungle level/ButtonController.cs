@@ -10,13 +10,7 @@ public class ButtonController : MonoBehaviour
     private static ButtonController instance;
     public Button botonStart;
     public Canvas canvasWelcome;
-    public Canvas canvasLevel;
-        public bool pasarNivel1;
-    public bool pasarNivel2;
-    public bool pasarNivel3;
-    public bool pasarNivel4;
-    public int indiceNivel;
-   // public Canvas canvasGame;
+    public Canvas canvasGame;
    // public Canvas canvas;
     //public Image imagen;
 
@@ -45,40 +39,13 @@ public class ButtonController : MonoBehaviour
         botonStart.gameObject.SetActive(false);
         //texto.enabled = false;
         canvasWelcome.gameObject.SetActive(false);
-        canvasLevel.gameObject.SetActive(true);
-       // canvasGame.gameObject.SetActive(true);
+        canvasGame.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(false);
         //canvasWelcome.gameObject.SetActive(false);
-        
-        
-      //  Game.GetInstance().SetIsStarted(true);
-       // Game.GetInstance().StartGame();
-        //Main.GetInstance().StartGame();
-    }
-    public void B_ShowLevel(){
-        Debug.Log("Button Level Clicked! ");
-        //botonClose.gameObject.SetActive(true);
-     
-        canvasLevel.gameObject.SetActive(false);
-       // canvasGame.gameObject.SetActive(true);
-        //imagen.gameObject.SetActive(false);
-        //canvasWelcome.gameObject.SetActive(false);
-        
-        
+    
         Game.GetInstance().SetIsStarted(true);
         Game.GetInstance().StartGame();
         //Main.GetInstance().StartGame();
-    }
-    public void cambiarNivel(int indice){
-        SceneManager.LoadScene(indice);
-        canvasLevel.gameObject.SetActive(false);
-       // canvasGame.gameObject.SetActive(true);
-        //imagen.gameObject.SetActive(false);
-        //canvasWelcome.gameObject.SetActive(false);
-        
-        
-        Game.GetInstance().SetIsStarted(true);
-        Game.GetInstance().StartGame();
     }
     public void B_NoShow(){
         Debug.Log("Button Clicked! ");
