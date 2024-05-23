@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Desert/SampleScene.unity
+    guid: 73c4a62ac47eec747b0929d9cfb2b356
+  - enabled: 1
+    path: Assets/Scenes/Jungle/Jungle.unity
+    guid: 2dfe751fe6a9a4ed296de22770682c30
+  - enabled: 1
+    path: Assets/Scenes/Snow/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Space/SampleScene.unity
+    guid: 57ffe4f5ab8ea45afab0e3ca4174fe25
   m_configObjects: {}

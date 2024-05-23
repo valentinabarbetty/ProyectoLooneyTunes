@@ -37,8 +37,8 @@ public class ButtonController : MonoBehaviour
         //botonClose.gameObject.SetActive(true);
         botonStart.gameObject.SetActive(false);
         //texto.enabled = false;
-        canvasWelcome.gameObject.SetActive(false);
-        canvasGame.gameObject.SetActive(true);
+        //canvasWelcome.gameObject.SetActive(false);
+       // canvasGame.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(false);
         //canvasWelcome.gameObject.SetActive(false);
         
