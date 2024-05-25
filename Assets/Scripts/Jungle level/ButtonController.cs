@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ButtonController : MonoBehaviour
 {
     //public Button botonClose;
@@ -32,8 +33,8 @@ public class ButtonController : MonoBehaviour
         
     }
 
-    public void B_Show(){
-        Debug.Log("Button Clicked! ");
+    public void B_ShowStart(){
+        Debug.Log("Button Start Clicked! ");
         //botonClose.gameObject.SetActive(true);
         botonStart.gameObject.SetActive(false);
         //texto.enabled = false;
@@ -41,8 +42,7 @@ public class ButtonController : MonoBehaviour
         canvasGame.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(false);
         //canvasWelcome.gameObject.SetActive(false);
-        
-        
+    
         Game.GetInstance().SetIsStarted(true);
         Game.GetInstance().StartGame();
         //Main.GetInstance().StartGame();
@@ -51,6 +51,7 @@ public class ButtonController : MonoBehaviour
         Debug.Log("Button Clicked! ");
         //botonClose.gameObject.SetActive(false);
         botonStart.gameObject.SetActive(true);
+
         //texto.enabled = true;
         //canvasWelcome.gameObject.SetActive(true);
         //imagen.gameObject.SetActive(true);
