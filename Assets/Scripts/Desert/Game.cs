@@ -26,15 +26,15 @@ public class Game : MonoBehaviour
 
             if (time == 0)
             {
-                TextTime.SetActive(false);
-                float horizontalInput = Input.GetAxis("Horizontal");
-                float verticalInput = Input.GetAxis("Vertical");
+                // TextTime.SetActive(false);
+                // float horizontalInput = Input.GetAxis("Horizontal");
+                // float verticalInput = Input.GetAxis("Vertical");
 
-                Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-                transform.Translate(moveDirection * speed * Time.deltaTime);
+                // Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+                // transform.Translate(moveDirection * speed * Time.deltaTime);
 
-                float mouseX = Input.GetAxis("Mouse X");
-                transform.Rotate(Vector3.up * mouseX);
+                // float mouseX = Input.GetAxis("Mouse X");
+                // transform.Rotate(Vector3.up * mouseX);
             }
         }
 
@@ -58,40 +58,40 @@ public class Game : MonoBehaviour
 
         // Start camera movements after countdown
         //StartCoroutine(MoveCameraHorizontally());
-        StartCoroutine(MoveCameraVertically());
+        // StartCoroutine(MoveCameraVertically());
     }
 
-    IEnumerator MoveCameraHorizontally()
-    {
-        float duration = 6f; // Decreased duration for faster movement
-        float elapsedTime = 0f;
-        Vector3 startPosition = transform.position;
-        Vector3 targetPosition = new Vector3(60f, transform.position.y, 100f); // Adjust X value as needed
+    // IEnumerator MoveCameraHorizontally()
+    // {
+    //     float duration = 6f; // Decreased duration for faster movement
+    //     float elapsedTime = 0f;
+    //     Vector3 startPosition = transform.position;
+    //     Vector3 targetPosition = new Vector3(60f, transform.position.y, 100f); // Adjust X value as needed
 
-        while (elapsedTime < duration)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        Debug.Log("Horizontal camera movement stopped.");
-    }
+    //     while (elapsedTime < duration)
+    //     {
+    //         transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+    //         elapsedTime += Time.deltaTime;
+    //         yield return null;
+    //     }
+    //     Debug.Log("Horizontal camera movement stopped.");
+    // }
 
-    IEnumerator MoveCameraVertically()
-    {
-        float duration = 20f; // Decreased duration for faster movement
-        float elapsedTime = 0f;
-        Vector3 startPosition = transform.position;
-        Vector3 targetPosition = new Vector3(transform.position.x, 30f, 100f); // Adjust Y value as needed
+    // IEnumerator MoveCameraVertically()
+    // {
+    //     float duration = 20f; // Decreased duration for faster movement
+    //     float elapsedTime = 0f;
+    //     Vector3 startPosition = transform.position;
+    //     Vector3 targetPosition = new Vector3(transform.position.x, 30f, 100f); // Adjust Y value as needed
 
-        while (elapsedTime < duration)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        Debug.Log("Vertical camera movement stopped.");
-    }
+    //     while (elapsedTime < duration)
+    //     {
+    //         transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / duration);
+    //         elapsedTime += Time.deltaTime;
+    //         yield return null;
+    //     }
+    //     Debug.Log("Vertical camera movement stopped.");
+    // }
 
     public void SetIsStarted(bool isStarted)
     {
