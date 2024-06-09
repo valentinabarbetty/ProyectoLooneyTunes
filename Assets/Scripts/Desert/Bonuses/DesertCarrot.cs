@@ -16,17 +16,33 @@ public class DesertCarrot : MonoBehaviour
     void Update()
     {
         MoverZanahorias();
-
     }
 
-     void MoverZanahorias()
+    void MoverZanahorias()
     {
-        Transform[] zanahorias = { carrot1};
+        Transform[] zanahorias = { carrot1 };
         foreach (Transform zanahoria in zanahorias)
         {
             Vector3 position = zanahoria.position;
             position.y += Mathf.Cos(Time.time) * 3.5f * Time.deltaTime;
             zanahoria.position = position;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bugs"))
+        {
+            Debug.Log("Player touched the carrot.");
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.AddCarrot();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.LogError("GameManager.instance is null!");
+            }
         }
     }
 }
