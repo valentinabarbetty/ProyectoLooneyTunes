@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class CanvasGameConfig : MonoBehaviour
 {
     private static CanvasGameConfig instance;
@@ -10,7 +12,9 @@ public class CanvasGameConfig : MonoBehaviour
     public TMP_Text carrotText;
     public TMP_Text heartText;
     private int carrotCount;
-     private int heartCount;
+    private int heartCount;
+    private const int maxHearts = 3;
+
     void Awake()
     {
         instance = this;
@@ -21,20 +25,33 @@ public class CanvasGameConfig : MonoBehaviour
     {
         carrotCount = 0;
         UpdateCarrotText();
-        heartCount = 3;
+        heartCount = maxHearts;
         UpdateHeartText();
     }
+
     public void AddCarrot()
     {
         carrotCount++;
         UpdateCarrotText();
- 
     }
-   public void AddHeart()
-    {
 
-        heartCount++;
+    public void AddHeart()
+    {
+        if (heartCount < maxHearts)
+        {
+            heartCount++;
+            UpdateHeartText();
+        }
+    }
+
+    public void DecreaseLife()
+    {
+        heartCount--;
         UpdateHeartText();
+        if (heartCount <= 0)
+        {
+            GameOver();
+        }
     }
 
     // Update is called once per frame
@@ -44,14 +61,17 @@ public class CanvasGameConfig : MonoBehaviour
         carrotText.text = "X" + carrotCount;
         heartText.text = "X" + heartCount;
     }
+
     private void UpdateCarrotText()
     {
         carrotText.text = "X" + carrotCount;
     }
-     private void UpdateHeartText()
+
+    private void UpdateHeartText()
     {
         heartText.text = "X" + heartCount;
     }
+
     public void B_OnHandleButtonExit()
     {
         CanvasGame.gameObject.SetActive(false);
@@ -73,4 +93,14 @@ public class CanvasGameConfig : MonoBehaviour
             Game.GetInstance().SetIsStarted(false);
         }
     }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over");
+        // Add additional game over logic here
+        // Restart the game
+      //SceneManager.LoadScene(1);
+    }
+
+   
 }
