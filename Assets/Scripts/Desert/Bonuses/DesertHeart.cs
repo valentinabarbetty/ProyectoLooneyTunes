@@ -39,4 +39,20 @@ public class DesertHeart : MonoBehaviour
             heart.position = position;
         }
     }
+        private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bugs"))
+        {
+            Debug.Log("Player touched the heart.");
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.AddHeart();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.LogError("GameManager.instance is null!");
+            }
+        }
+    }
 }
