@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CanvasGameConfig carrotCounter;
+    public CanvasGameConfig heartCounter;
 
     private void Awake()
     {
@@ -29,6 +30,18 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("CarrotCounter is not assigned!");
+        }
+    }
+    public void AddHeart()
+    {
+        Debug.Log("AddCarrot called.");
+        if (carrotCounter != null)
+        {
+            heartCounter.AddHeart();
+        }
+        else
+        {
+            Debug.LogError("Heartcounter is not assigned!");
         }
     }
 }
