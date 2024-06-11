@@ -20,42 +20,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        if (carrotCounter == null || heartCounter == null)
-        {
-            FindAndAssignCanvasGameConfig();
-        }
-    }
-
-    private void FindAndAssignCanvasGameConfig()
-    {
-        CanvasGameConfig[] configs = FindObjectsOfType<CanvasGameConfig>();
-        foreach (var config in configs)
-        {
-            // Assign based on which type it is
-            if (config.carrotText != null)
-            {
-                carrotCounter = config;
-            }
-
-            if (config.heartText != null)
-            {
-                heartCounter = config;
-            }
-        }
-
-        if (carrotCounter == null)
-        {
-            Debug.LogError("CarrotCounter is not assigned!");
-        }
-
-        if (heartCounter == null)
-        {
-            Debug.LogError("HeartCounter is not assigned!");
-        }
-    }
-
     public void AddCarrot()
     {
         Debug.Log("AddCarrot called.");

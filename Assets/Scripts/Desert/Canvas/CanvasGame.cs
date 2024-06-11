@@ -97,6 +97,7 @@ public class CanvasGameConfig : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game Over");
+        
         // Add additional game over logic here
         // Restart the game
       //SceneManager.LoadScene(1);
