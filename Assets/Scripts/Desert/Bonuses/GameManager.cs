@@ -32,16 +32,30 @@ public class GameManager : MonoBehaviour
             Debug.LogError("CarrotCounter is not assigned!");
         }
     }
+
     public void AddHeart()
     {
-        Debug.Log("AddCarrot called.");
-        if (carrotCounter != null)
+        Debug.Log("AddHeart called.");
+        if (heartCounter != null)
         {
             heartCounter.AddHeart();
         }
         else
         {
-            Debug.LogError("Heartcounter is not assigned!");
+            Debug.LogError("HeartCounter is not assigned!");
+        }
+    }
+
+    public void DecreaseLife()
+    {
+        Debug.Log("DecreaseLife called.");
+        if (heartCounter != null)
+        {
+            heartCounter.DecreaseLife();
+        }
+        else
+        {
+            Debug.LogError("HeartCounter is not assigned!");
         }
     }
 }

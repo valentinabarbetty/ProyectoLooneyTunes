@@ -105,7 +105,21 @@ public class LogicaBugs : MonoBehaviour
             anim.SetBool("EstáSaltando", true);
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Player collided with enemy.");
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.DecreaseLife();
+            }
+            else
+            {
+                Debug.LogError("GameManager.instance is null!");
+            }
+        }
+    }
     void OnCollisionEnter(Collision collision)
     {
         // Verificar si el personaje ha tocado el suelo
