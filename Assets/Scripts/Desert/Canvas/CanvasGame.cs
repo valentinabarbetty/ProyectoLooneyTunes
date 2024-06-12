@@ -14,6 +14,7 @@ public class CanvasGameConfig : MonoBehaviour
     private int carrotCount;
     private int heartCount;
     private const int maxHearts = 3;
+    public LogicaBugs logicaBugs; // Referencia al script LogicaBugs
 
     void Awake()
     {
@@ -27,6 +28,12 @@ public class CanvasGameConfig : MonoBehaviour
         UpdateCarrotText();
         heartCount = maxHearts;
         UpdateHeartText();
+
+        // Verifica si logicaBugs ha sido asignado en el Inspector
+        if (logicaBugs == null)
+        {
+            Debug.LogError("LogicaBugs reference is not assigned!");
+        }
     }
 
     public void AddCarrot()
@@ -97,11 +104,22 @@ public class CanvasGameConfig : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game Over");
-        
-        // Add additional game over logic here
-        // Restart the game
-      //SceneManager.LoadScene(1);
-    }
 
-   
+        // Restablecer la posición del personaje
+        if (logicaBugs != null)
+        {
+            logicaBugs.ResetPosition();
+        }
+        else
+        {
+            Debug.LogError("LogicaBugs reference is not assigned!");
+        }
+
+        // Restablecer las vidas a tres
+        heartCount = maxHearts;
+        UpdateHeartText();
+
+        // Opcional: Puedes agregar más lógica aquí si es necesario
+        // como mostrar una pantalla de "Game Over" o reiniciar el nivel.
+    }
 }

@@ -12,11 +12,15 @@ public class LogicaBugs : MonoBehaviour
     private Rigidbody rb;
     private float x, y;
     private bool estaEnSuelo;
+    private Vector3 posicionInicial;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        // Guardar la posición inicial
+        posicionInicial = transform.position;
 
         // Verificar si Animator está presente
         if (anim == null)
@@ -35,6 +39,13 @@ public class LogicaBugs : MonoBehaviour
 
         // Activar interpolación para suavizar el movimiento
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+    }
+
+    // Restablecer la posición del personaje
+    public void ResetPosition()
+    {
+        transform.position = posicionInicial;
+        rb.velocity = Vector3.zero; // Para asegurarse de que el personaje no siga moviéndose
     }
 
     void Update()
@@ -105,6 +116,7 @@ public class LogicaBugs : MonoBehaviour
             anim.SetBool("EstáSaltando", true);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -120,6 +132,7 @@ public class LogicaBugs : MonoBehaviour
             }
         }
     }
+
     void OnCollisionEnter(Collision collision)
     {
         // Verificar si el personaje ha tocado el suelo
