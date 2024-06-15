@@ -9,6 +9,7 @@ TagManager:
   - PlataformaMovil
   - Bugs
   - Enemy
+  - Flag
   layers:
   - Default
   - TransparentFX

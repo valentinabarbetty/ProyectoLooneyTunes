@@ -10,13 +10,19 @@ public class LogicaBugs : MonoBehaviour
     public float fuerzaCaida = 10.0f; // Fuerza adicional para caer más rápido
     private Animator anim;
     private Rigidbody rb;
+    private AudioController audioController;
     private float x, y;
     private bool estaEnSuelo;
+    private Vector3 posicionInicial;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        audioController = GetComponent<AudioController>();
+
+        // Guardar la posición inicial
+        posicionInicial = transform.position;
 
         // Verificar si Animator está presente
         if (anim == null)
@@ -30,11 +36,24 @@ public class LogicaBugs : MonoBehaviour
             Debug.LogError("No se encontró el componente Rigidbody.");
         }
 
+        // Verificar si AudioController está presente
+        if (audioController == null)
+        {
+            Debug.LogError("No se encontró el componente AudioController.");
+        }
+
         // Cambiar a detección de colisiones continuas dinámicas
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
         // Activar interpolación para suavizar el movimiento
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+    }
+
+    // Restablecer la posición del personaje
+    public void ResetPosition()
+    {
+        transform.position = posicionInicial;
+        rb.velocity = Vector3.zero; // Para asegurarse de que el personaje no siga moviéndose
     }
 
     void Update()
@@ -54,6 +73,19 @@ public class LogicaBugs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && estaEnSuelo)
         {
             Saltar();
+        }
+
+        // Reproducir o detener el sonido de caminar según el movimiento
+        if (audioController != null)
+        {
+            if (x != 0 || y != 0)
+            {
+                audioController.PlayWalkSound();
+            }
+            else
+            {
+                audioController.StopWalkSound();
+            }
         }
     }
 
@@ -105,6 +137,7 @@ public class LogicaBugs : MonoBehaviour
             anim.SetBool("EstáSaltando", true);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -119,7 +152,13 @@ public class LogicaBugs : MonoBehaviour
                 Debug.LogError("GameManager.instance is null!");
             }
         }
+
+        if (other.CompareTag("Flag"))
+        {
+            Debug.Log("toqué la bandera");
+        }
     }
+
     void OnCollisionEnter(Collision collision)
     {
         // Verificar si el personaje ha tocado el suelo
