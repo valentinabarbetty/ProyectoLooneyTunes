@@ -3116,6 +3116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 956091943}
     - target: {fileID: 8224164853079931142, guid: ee7f1bcc946464ad98d52c213a7bbad7, type: 3}
+      propertyPath: logicaBugs
+      value: 
+      objectReference: {fileID: 1953410679}
+    - target: {fileID: 8224164853079931142, guid: ee7f1bcc946464ad98d52c213a7bbad7, type: 3}
       propertyPath: CanvasInicio
       value: 
       objectReference: {fileID: 653085203}
@@ -6750,6 +6754,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5239d63187264b78bcbbdc2f9c2a1c8, type: 3}
+--- !u!114 &1953410679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8653003902765168201, guid: d322adfdb8ddc49f59096924b560b455, type: 3}
+  m_PrefabInstance: {fileID: 1268223057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27dca82096d422468fdfa148be67459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1988325936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7053,7 +7068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8721257134912884882, guid: a07963bfc49d348ff9bd4287bdc0beb9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

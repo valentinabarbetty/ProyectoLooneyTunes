@@ -10,6 +10,7 @@ public class LogicaBugs : MonoBehaviour
     public float fuerzaCaida = 10.0f; // Fuerza adicional para caer más rápido
     private Animator anim;
     private Rigidbody rb;
+    private AudioController audioController;
     private float x, y;
     private bool estaEnSuelo;
     private Vector3 posicionInicial;
@@ -18,6 +19,7 @@ public class LogicaBugs : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        audioController = GetComponent<AudioController>();
 
         // Guardar la posición inicial
         posicionInicial = transform.position;
@@ -32,6 +34,12 @@ public class LogicaBugs : MonoBehaviour
         if (rb == null)
         {
             Debug.LogError("No se encontró el componente Rigidbody.");
+        }
+
+        // Verificar si AudioController está presente
+        if (audioController == null)
+        {
+            Debug.LogError("No se encontró el componente AudioController.");
         }
 
         // Cambiar a detección de colisiones continuas dinámicas
@@ -65,6 +73,19 @@ public class LogicaBugs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && estaEnSuelo)
         {
             Saltar();
+        }
+
+        // Reproducir o detener el sonido de caminar según el movimiento
+        if (audioController != null)
+        {
+            if (x != 0 || y != 0)
+            {
+                audioController.PlayWalkSound();
+            }
+            else
+            {
+                audioController.StopWalkSound();
+            }
         }
     }
 
