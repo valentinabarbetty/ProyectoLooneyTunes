@@ -5,15 +5,19 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     public AudioClip walk;
+    public AudioClip jungle;  // Sonido de fondo
     private AudioSource audioSource;
+    private AudioSource backgroundSource;  // Nuevo AudioSource para el sonido de fondo
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            Debug.LogError("No AudioSource component found.");
-        }
+        // AudioSource para efectos de sonido (como caminar)
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        // AudioSource para el sonido de fondo
+        backgroundSource = gameObject.AddComponent<AudioSource>();
+        backgroundSource.clip = jungle;
+        backgroundSource.loop = true;
     }
 
     public void PlayWalkSound()
@@ -30,6 +34,14 @@ public class AudioController : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
+        }
+    }
+
+    public void PlayBackgroundSound()
+    {
+        if (!backgroundSource.isPlaying)
+        {
+            backgroundSource.Play();
         }
     }
 }

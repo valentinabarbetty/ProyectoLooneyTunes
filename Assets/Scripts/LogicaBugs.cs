@@ -152,6 +152,11 @@ public class LogicaBugs : MonoBehaviour
                 Debug.LogError("GameManager.instance is null!");
             }
         }
+
+        if (other.CompareTag("Flag"))
+        {
+            Debug.Log("toqué la bandera");
+        }
     }
 
     void OnCollisionEnter(Collision collision)
