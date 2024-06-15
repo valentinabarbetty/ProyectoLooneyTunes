@@ -6,7 +6,11 @@ public class CanvasMenuConfig : MonoBehaviour
 {  
     private static CanvasMenuConfig instance;
     public Canvas CanvasMenu;
+
+     public Canvas CanvasLevels;
     public Canvas CanvasGame;
+
+    public Canvas CanvasPerfil;
 
     void Awake()
     {
@@ -31,6 +35,17 @@ public class CanvasMenuConfig : MonoBehaviour
         Game.GetInstance().StartGame();
     }
 
+     public void B_OnHandleButtonPerfil()
+    {
+        CanvasMenu.gameObject.SetActive(false);
+        CanvasPerfil.gameObject.SetActive(true);
+    }
+
+    public void B_OnHandleButtonLevell()
+    {
+        CanvasMenu.gameObject.SetActive(false);
+        CanvasLevels.gameObject.SetActive(true);
+    }
      public void ExitGame()
     {
         // Aquí puedes poner cualquier lógica adicional que necesites antes de salir del juego
