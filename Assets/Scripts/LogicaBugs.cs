@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LogicaBugs : MonoBehaviour
 {
     public float velocidadMovimiento = 20.0f; // Mayor velocidad
@@ -156,6 +156,7 @@ public class LogicaBugs : MonoBehaviour
         if (other.CompareTag("Flag"))
         {
             Debug.Log("toqué la bandera");
+            CambiarEscena();
         }
     }
 
@@ -180,4 +181,18 @@ public class LogicaBugs : MonoBehaviour
             estaEnSuelo = false;
         }
     }
+
+    private void CambiarEscena()
+    {
+        int siguienteNivel = SceneManager.GetActiveScene().buildIndex + 1; // Cambiar al siguiente nivel
+        if (siguienteNivel < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(siguienteNivel);
+        }
+        else
+        {
+            Debug.LogError("No hay más niveles disponibles.");
+        }
+    }
+
 }

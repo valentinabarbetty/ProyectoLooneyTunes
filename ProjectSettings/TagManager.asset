@@ -10,6 +10,8 @@ TagManager:
   - Bugs
   - Enemy
   - Flag
+  - CarrotCounter
+  - HeartCounter
   layers:
   - Default
   - TransparentFX

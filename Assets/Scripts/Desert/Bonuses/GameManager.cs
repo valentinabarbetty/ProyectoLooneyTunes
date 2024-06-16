@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public CanvasGameConfig carrotCounter;
-    public CanvasGameConfig heartCounter;
+    private CanvasGameConfig carrotCounter;
+    private CanvasGameConfig heartCounter;
 
     private void Awake()
     {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
             Debug.Log("GameManager instance created.");
         }
         else
@@ -19,6 +21,32 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        AssignCanvasGameConfig();
+    }
+
+    private void AssignCanvasGameConfig()
+{
+    carrotCounter = FindObjectOfType<CanvasGameConfig>();
+    if (carrotCounter == null)
+    {
+        Debug.LogError("Failed to find CanvasGameConfig for CarrotCounter in the scene!");
+    }
+
+    heartCounter = FindObjectOfType<CanvasGameConfig>();
+    if (heartCounter == null)
+    {
+        Debug.LogError("Failed to find CanvasGameConfig for HeartCounter in the scene!");
+    }
+}
+
 
     public void AddCarrot()
     {
