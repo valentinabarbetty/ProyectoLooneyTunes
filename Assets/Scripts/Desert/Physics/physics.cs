@@ -70,7 +70,6 @@ public class Movimiento : MonoBehaviour
 
     private IEnumerator LanzarDardo(Rigidbody dardo, Vector3 finalPosition)
     {
-        Debug.Log("Lanzando dardo hacia " + finalPosition);
         Vector3 direction = (finalPosition - dardo.position).normalized;
         float distance = Vector3.Distance(dardo.position, finalPosition);
 
@@ -83,13 +82,11 @@ public class Movimiento : MonoBehaviour
             }
             dardo.MovePosition(dardo.position + move);
             distance = Vector3.Distance(dardo.position, finalPosition);
-            Debug.Log("Dardo posición: " + dardo.position + ", Distancia a posición final: " + distance);
             yield return new WaitForFixedUpdate();
         }
 
         // Detener el dardo en la posición final
         dardo.position = finalPosition;
-        Debug.Log("Dardo llegó a la posición final: " + dardo.position);
     }
 
     private void ResetearPosiciones()
@@ -99,15 +96,12 @@ public class Movimiento : MonoBehaviour
         ResetearDardo(dardo3, initialPosition3);
         ResetearDardo(dardo4, initialPosition4);
 
-        Debug.Log("Dardos reiniciados a sus posiciones iniciales.");
     }
 
     private void ResetearDardo(Rigidbody dardo, Vector3 initialPosition)
     {
-        Debug.Log("Reseteando posición del dardo a " + initialPosition);
         dardo.position = initialPosition;
         dardo.velocity = Vector3.zero;
         dardo.angularVelocity = Vector3.zero;
-        Debug.Log("Posición del dardo después del reinicio: " + dardo.position);
     }
 }

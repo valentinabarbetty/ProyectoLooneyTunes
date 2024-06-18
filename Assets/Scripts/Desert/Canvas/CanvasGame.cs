@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class CanvasGameConfig : MonoBehaviour
 {
+    private static CanvasGameConfig instance;
     public Canvas CanvasGame;
     public Canvas CanvasMenu;
     public TMP_Text carrotText;
@@ -12,13 +11,27 @@ public class CanvasGameConfig : MonoBehaviour
     private int carrotCount;
     private int heartCount;
     private const int maxHearts = 3;
-    public LogicaBugs logicaBugs;
+    public LogicaBugs logicaBugs; // Referencia al script LogicaBugs
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
-        carrotCount = 0;
+        InitializeCounters();
+    }
+
+    private void InitializeCounters()
+    {
+        carrotCount = PlayerPrefs.GetInt("TotalCarrots", 0);
         UpdateCarrotText();
-        heartCount = maxHearts;
+
+        heartCount = PlayerPrefs.GetInt("TotalHearts", maxHearts);
         UpdateHeartText();
 
         if (logicaBugs == null)
@@ -27,10 +40,25 @@ public class CanvasGameConfig : MonoBehaviour
         }
     }
 
+    public void SetCarrotCount(int count)
+    {
+        carrotCount = count;
+        UpdateCarrotText();
+    }
+
+    public void SetHeartCount(int count)
+    {
+        heartCount = count;
+        UpdateHeartText();
+    }
+
     public void AddCarrot()
     {
         carrotCount++;
         UpdateCarrotText();
+        Debug.Log("Zanahoria añadida. Total actual: " + carrotCount);
+        // Guardar el nuevo conteo de zanahorias en PlayerPrefs
+        PlayerPrefs.SetInt("TotalCarrots", carrotCount);
     }
 
     public void AddHeart()
@@ -39,6 +67,9 @@ public class CanvasGameConfig : MonoBehaviour
         {
             heartCount++;
             UpdateHeartText();
+            Debug.Log("Corazón añadido. Total actual: " + heartCount);
+            // Guardar el nuevo conteo de corazones en PlayerPrefs
+            PlayerPrefs.SetInt("TotalHearts", heartCount);
         }
     }
 
@@ -50,13 +81,14 @@ public class CanvasGameConfig : MonoBehaviour
         {
             GameOver();
         }
+        Debug.Log("Corazón decrementado. Total actual: " + heartCount);
+        // Guardar el nuevo conteo de corazones en PlayerPrefs
+        PlayerPrefs.SetInt("TotalHearts", heartCount);
     }
 
     void Update()
     {
         B_tecla();
-        carrotText.text = "X" + carrotCount;
-        heartText.text = "X" + heartCount;
     }
 
     private void UpdateCarrotText()
@@ -76,6 +108,11 @@ public class CanvasGameConfig : MonoBehaviour
         Game.GetInstance().SetIsStarted(false);
     }
 
+    public static CanvasGameConfig GetInstance()
+    {
+        return instance == null ? instance = new CanvasGameConfig() : instance;
+    }
+
     public void B_tecla()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -89,7 +126,6 @@ public class CanvasGameConfig : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Game Over");
-
         if (logicaBugs != null)
         {
             logicaBugs.ResetPosition();
@@ -98,7 +134,6 @@ public class CanvasGameConfig : MonoBehaviour
         {
             Debug.LogError("LogicaBugs reference is not assigned!");
         }
-
         heartCount = maxHearts;
         UpdateHeartText();
     }
