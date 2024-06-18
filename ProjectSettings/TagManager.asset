@@ -12,6 +12,7 @@ TagManager:
   - Flag
   - CarrotCounter
   - HeartCounter
+  - notmapa
   layers:
   - Default
   - TransparentFX

@@ -158,6 +158,11 @@ public class LogicaBugs : MonoBehaviour
             Debug.Log("toqué la bandera");
             CambiarEscena();
         }
+
+        if (other.CompareTag("notmapa")){
+            Debug.Log("Se salio del mapa");
+            ResetPosition();
+        }
     }
 
     void OnCollisionEnter(Collision collision)
