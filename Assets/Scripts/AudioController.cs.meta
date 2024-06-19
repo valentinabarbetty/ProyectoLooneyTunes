@@ -3,7 +3,9 @@ guid: 503a12522a4ed434d8c5d43bd50841ce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - walk: {fileID: 8300000, guid: 62e29182cfdb34a948c3f28b16d55fdc, type: 3}
+  - jungle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
